@@ -59,7 +59,7 @@ describe('test App component', () => {
         expect(screen.getByTestId('input-value')).toContainHTML('Hello, bitch!');
     }); */
 
-    test('first test', () => {
+    test('Routing test', () => {
         render(
             <MemoryRouter>
                 <App />
@@ -81,5 +81,15 @@ describe('test App component', () => {
         });
         screen.debug();
         expect(screen.getByTestId('home-page')).toBeInTheDocument();
+    });
+
+    test('Error page test', () => {
+        render(
+            <MemoryRouter initialEntries={['/sdhfdh']}>
+                <App />
+            </MemoryRouter>
+        );
+
+        expect(screen.getByTestId('error-page')).toBeInTheDocument();
     });
 });

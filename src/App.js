@@ -33,19 +33,16 @@ function App() {
 export default App; */
 
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+import { Link } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
     return (
         <div>
             <Link to='/' data-testid='home-link' >Home</Link>
             <Link to='/about' data-testid='about-link' >About</Link>
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/about' element={<AboutPage />} />
-            </Routes>
+            <Link to='/users' data-testid='users-link' >Users</Link>
+            <AppRoutes />
         </div>
     );
 };
