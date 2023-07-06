@@ -1,9 +1,10 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('test App component', () => {
-    test('first test', () => {
+    /* test('first test', () => {
         render(<App />);
         const h1 = screen.getByText(/react testing library/i);
         const btn = screen.getByRole('button');
@@ -56,5 +57,29 @@ describe('test App component', () => {
             userEvent.type(input, 'Hello, bitch!');
         });
         expect(screen.getByTestId('input-value')).toContainHTML('Hello, bitch!');
+    }); */
+
+    test('first test', () => {
+        render(
+            <MemoryRouter>
+                <App />
+            </MemoryRouter>
+        );
+        const homeLink = screen.getByTestId('home-link');
+        const aboutLink = screen.getByTestId('about-link');
+        screen.debug();
+        expect(screen.getByTestId('home-page')).toBeInTheDocument();
+        
+        act(() => {
+            userEvent.click(aboutLink);
+        });
+        screen.debug();
+        expect(screen.getByTestId('about-page')).toBeInTheDocument();
+
+        act(() => {
+            userEvent.click(homeLink);
+        });
+        screen.debug();
+        expect(screen.getByTestId('home-page')).toBeInTheDocument();
     });
 });

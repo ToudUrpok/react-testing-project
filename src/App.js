@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+/* import { useEffect, useState } from 'react';
 
 function App() {
     const [data, setData] = useState('');
@@ -29,5 +29,25 @@ function App() {
         </div>
     );
 }
+
+export default App; */
+
+import React from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+
+const App = () => {
+    return (
+        <div>
+            <Link to='/' data-testid='home-link' >Home</Link>
+            <Link to='/about' data-testid='about-link' >About</Link>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/about' element={<AboutPage />} />
+            </Routes>
+        </div>
+    );
+};
 
 export default App;
