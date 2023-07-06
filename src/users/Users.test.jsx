@@ -50,20 +50,20 @@ describe('test Users component', () => {
         expect(axios.get).toBeCalledTimes(1);
         const users = await screen.findAllByTestId('user-item');
         expect(users.length).toBe(5);
-        screen.debug();
+        //screen.debug();
     });
 
     test('user detailed view link test', async () => {
         axios.get.mockReturnValue(response);
-        render(renderWithRouter(<Users />));
+        renderWithRouter(<Users />);
 
-        screen.debug();
+        //screen.debug();
         const users = await screen.findAllByTestId('user-item');
         expect(users.length).toBe(5);
         act(() => {
             userEvent.click(users[0]);
         });
-        screen.debug();
+        //screen.debug();
         expect(screen.getByTestId('user-page')).toBeInTheDocument();
     });
 });

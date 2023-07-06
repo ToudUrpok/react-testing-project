@@ -67,19 +67,19 @@ describe('test App component', () => {
         );
         const homeLink = screen.getByTestId('home-link');
         const aboutLink = screen.getByTestId('about-link');
-        screen.debug();
+        //screen.debug();
         expect(screen.getByTestId('home-page')).toBeInTheDocument();
         
         act(() => {
             userEvent.click(aboutLink);
         });
-        screen.debug();
+        //screen.debug();
         expect(screen.getByTestId('about-page')).toBeInTheDocument();
 
         act(() => {
             userEvent.click(homeLink);
         });
-        screen.debug();
+        //screen.debug();
         expect(screen.getByTestId('home-page')).toBeInTheDocument();
     });
 

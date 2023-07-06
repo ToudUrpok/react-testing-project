@@ -33,15 +33,13 @@ function App() {
 export default App; */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
+import Navbar from './components/Navbar/Navbar';
 
 const App = () => {
     return (
         <div>
-            <Link to='/' data-testid='home-link' >Home</Link>
-            <Link to='/about' data-testid='about-link' >About</Link>
-            <Link to='/users' data-testid='users-link' >Users</Link>
+            <Navbar />
             <AppRoutes />
         </div>
     );

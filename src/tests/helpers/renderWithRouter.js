@@ -1,11 +1,14 @@
 import { MemoryRouter } from "react-router-dom";
 import AppRoutes from "../../routes/AppRoutes";
+import { render } from "@testing-library/react";
 
 export const renderWithRouter = (component) => {
     return (
-        <MemoryRouter>
-            <AppRoutes />
-            {component}
-        </MemoryRouter>
+        render(
+            <MemoryRouter>
+                <AppRoutes />
+                {component}
+            </MemoryRouter>
+        )
     );
 }
