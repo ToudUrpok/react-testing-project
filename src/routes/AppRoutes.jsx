@@ -5,11 +5,13 @@ import AboutPage from '../pages/AboutPage';
 import ErrorPage from '../pages/ErrorPage';
 import Users from '../users/Users';
 import UserDetailedPage from '../pages/UserDetailedPage';
+import HelloWorld from "../pages/HelloWorld";
 
 const AppRoutes = () => {
     return (
         <Routes>
             <Route path='/' element={<HomePage />} />
+            <Route path='/hello' element={<HelloWorld />} />
             <Route path='/about' element={<AboutPage />} />
             <Route path='/users' element={<Users />} />
             <Route path='/users/:id' element={<UserDetailedPage />} />
