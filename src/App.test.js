@@ -1,7 +1,8 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
+import { renderWithRedux } from './tests/helpers/renderWithRedux';
 
 describe('test App component', () => {
     /* test('first test', () => {
@@ -60,7 +61,7 @@ describe('test App component', () => {
     }); */
 
     test('Routing test', () => {
-        render(
+        renderWithRedux(
             <MemoryRouter>
                 <App />
             </MemoryRouter>

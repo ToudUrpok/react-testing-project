@@ -3,7 +3,7 @@ import Users from "./Users";
 import axios from "axios";
 import { MemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import { renderWithRouter } from "../tests/helpers/renderWithRouter";
+import { renderWithReduxAndRouter } from "../tests/helpers/renderWithReduxAndRouter";
 
 jest.mock('axios');
 
@@ -55,7 +55,7 @@ describe('test Users component', () => {
 
     test('user detailed view link test', async () => {
         axios.get.mockReturnValue(response);
-        renderWithRouter(<Users />);
+        renderWithReduxAndRouter(<Users />);
 
         //screen.debug();
         const users = await screen.findAllByTestId('user-item');

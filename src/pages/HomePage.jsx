@@ -1,9 +1,11 @@
 import React from "react";
+import Counter from "../components/Counter/Counter";
 
 const HomePage = () => {
     return (
         <div data-testid='home-page'>
-            HOME PAGE
+            <h1>HOME PAGE</h1>
+            <Counter />
         </div>
     );
 };

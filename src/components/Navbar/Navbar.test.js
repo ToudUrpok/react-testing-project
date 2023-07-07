@@ -1,11 +1,11 @@
-import { renderWithRouter } from "../../tests/helpers/renderWithRouter";
+import { renderWithReduxAndRouter } from "../../tests/helpers/renderWithReduxAndRouter";
 import { act, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Navbar from "./Navbar";
 
 describe('Navbar component testing', () => {
     test('home link', () => {
-        renderWithRouter(<Navbar />);
+        renderWithReduxAndRouter(<Navbar />);
         const homeLink = screen.getByTestId('home-link');
         act(() => {
             userEvent.click(homeLink);
@@ -14,7 +14,7 @@ describe('Navbar component testing', () => {
     });
 
     test('about link', () => {
-        renderWithRouter(<Navbar />);
+        renderWithReduxAndRouter(<Navbar />);
         const aboutLink = screen.getByTestId('about-link');
         act(() => {
             userEvent.click(aboutLink);
@@ -23,7 +23,7 @@ describe('Navbar component testing', () => {
     });
 
     test('users link', () => {
-        renderWithRouter(<Navbar />);
+        renderWithReduxAndRouter(<Navbar />);
         const usersLink = screen.getByTestId('users-link');
         act(() => {
             userEvent.click(usersLink);
